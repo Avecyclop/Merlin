@@ -8,6 +8,14 @@ var Api = (function()
     //pub.ingredient = "Bacon Strips";
 
     //Public method
+    pub.createPlayer = function(name, callback)
+    {
+		$.post("api/web/players", name, function(data)
+		{
+			callback(data);
+		});
+    }
+
     pub.getRooms = function(callback)
     {
     	$.getJSON("api/web/room", function(data)

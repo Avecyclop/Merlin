@@ -20,6 +20,12 @@ public class WebApiServer implements WebApi
 	}
 
 	@Override
+	public Player createPlayers(String playerName)
+	{
+		return api.createPlayer(playerName);
+	}
+
+	@Override
 	public Room[] getAllRooms()
 	{
 		logger.info("Get all rooms");

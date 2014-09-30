@@ -70,7 +70,19 @@ function setCreateNewRoomFormBehaviour()
 
 function submitName()
 {
-	username = $("#nameInput").val();
+	const username = $("#nameInput").val();
+	Api.createPlayer(username, function(player)
+	{
+		console.log("Got callback from createplayer");
+		console.log(player);
+		loggedIn(player);
+	});
+
+}
+
+function loggedIn(player)
+{
+	username = player.name;
 	switchToDiv("#roomJoinDiv");
 }
 

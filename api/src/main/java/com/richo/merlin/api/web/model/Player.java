@@ -6,14 +6,30 @@ package com.richo.merlin.api.web.model;
 public class Player
 {
 	private final String name;
+	private final PlayerId id;
 
-	public Player(String name)
+	public Player(final PlayerId id, final String name)
 	{
 		this.name = name;
+		this.id = id;
 	}
 
 	public String getName()
 	{
 		return name;
+	}
+
+	public PlayerId getId()
+	{
+		return id;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Player{" +
+				"name='" + name + '\'' +
+				", id=" + id +
+				'}';
 	}
 }
